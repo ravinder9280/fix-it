@@ -1,7 +1,13 @@
-import type { Metadata } from "next";
 import {Outfit} from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
+import { type Metadata } from 'next'
+import { dark } from '@clerk/themes'
+
+import {
+  ClerkProvider
+} from '@clerk/nextjs'
+
 import { ThemeProvider } from "@/components/theme-provider";
 const inter = Outfit({ subsets: ['latin'],
   
@@ -18,6 +24,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+<ClerkProvider
+      appearance={{
+        baseTheme: dark,
+      }}
+    >
     
     <html lang="en">
       <ThemeProvider>
@@ -25,12 +36,13 @@ export default function RootLayout({
         className={`${inter.className}  antialiased`}
         >
         <NavBar/>
-        <main>
+        <main className="mt-[4rem]">
 
         {children}
         </main>
       </body>
         </ThemeProvider>
     </html>
+          </ClerkProvider>
   );
 }

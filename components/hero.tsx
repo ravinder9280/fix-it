@@ -147,7 +147,7 @@ const Hero = React.forwardRef<HTMLElement, HeroProps>(
                     variant={action.variant || "default"}
                     asChild
                   >
-                    <Link href={action.href}>{action.label}</Link>
+                    <Link href={'/dashboard'}>{action.label}</Link>
                   </Button>
                 ))}
               </div>

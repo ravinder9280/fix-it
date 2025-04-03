@@ -9,7 +9,7 @@ const features = [
     step: 'Step 1', 
     title: 'Learn the Basics',
     content: 'Start your Web3 journey by learning the basics of blockchain.', 
-    image: 'https://images.unsplash.com/photo-1723958929247-ef054b525153?q=80&w=2070&auto=format&fit=crop' 
+    image: '/chatdemo.png' 
   },
   { 
     step: 'Step 2',
