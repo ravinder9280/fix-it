@@ -7,7 +7,7 @@ export async function POST(req: NextRequest) {
 
     // Extract relevant fields from the payload
     const { data } = body;
-    const { id, first_name, last_name, email_addresses, profile_image_url } = data;
+    const {  first_name, last_name, email_addresses, profile_image_url } = data;
 
     // Validate email_addresses and extract the first email
     const email = Array.isArray(email_addresses) && email_addresses.length > 0
@@ -19,7 +19,7 @@ export async function POST(req: NextRequest) {
     }
 
     // Save user in your database
-    await prisma.user.create({
+    const Reguser=await prisma.user.create({
       data: {
         email,
         firstName: first_name || null,
@@ -27,6 +27,7 @@ export async function POST(req: NextRequest) {
         imageUrl: profile_image_url || null,
       },
     });
+    console.log("User saved:", Reguser);
 
     return NextResponse.json({ success: true }, { status: 200 });
   } catch (error) {
