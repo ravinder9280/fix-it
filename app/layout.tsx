@@ -31,7 +31,7 @@ export default function RootLayout({
     >
     
     <html lang="en">
-      <ThemeProvider>
+      <ThemeProvider  defaultTheme={"dark"} >
       <body
         className={`${inter.className}  antialiased`}
         >
