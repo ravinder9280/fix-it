@@ -29,11 +29,11 @@ export default function Feature() {
     return (
 
 
-                <div className="grid grid-cols-2 md:grid-cols-3 mt-16 lg:grid-cols-4 gap-4 md:gap-6 max-w-7xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-3 mt-16 lg:grid-cols-4 gap-4 md:gap-6 max-w-7xl p-8 md:p-12 mx-auto">
                     {features.map((feature, idx) => (
                         <div
                             key={idx}
-                            className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-xl p-4 md:p-6 h-40 md:h-48 flex flex-col justify-start items-start space-y-2 md:space-y-3"
+                            className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-xl p-4 hover:bg-white/10 transition-all duration-300 md:p-6 h-40 md:h-48 flex flex-col justify-start items-start space-y-2 md:space-y-3"
                         >
                             <feature.icon size={18} className="text-white/80 md:w-5 md:h-5" />
                             <h3 className="text-sm md:text-base font-medium">{feature.title}</h3>

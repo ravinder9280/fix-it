@@ -1,5 +1,6 @@
 "use client";
 
+import LoadingSkeleton from "@/components/loading-skeleton";
 import {
 	ChatInput,
 	ChatInputSubmit,
@@ -21,19 +22,7 @@ export default  function Page() {
 	};
 
 	return (
-		<div className="w-full max-w-[400px] h-full">
-			<ChatInput
-				variant="default"
-				value={value}
-				onChange={(e) => setValue(e.target.value)}
-				onSubmit={handleSubmit}
-				loading={isLoading}
-				onStop={() => setIsLoading(false)}
-			>
-				<ChatInputTextArea placeholder="Type a message..." />
-				<ChatInputSubmit />
-			</ChatInput>
-		</div>
+<LoadingSkeleton/>
 	);
 }
 
