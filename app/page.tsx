@@ -6,6 +6,7 @@ import { FeatureSteps } from "@/components/feature-section"
 import Feature from "@/components/feature";
 import { features } from "@/constant/featuresSteps.json";
 import { testimonials } from "@/constant/testimonials.json";
+import Faq02 from "@/components/faq";
 
 
 export default function Page() {
@@ -42,6 +43,9 @@ export default function Page() {
       description="Join thousands of developers who are already building the future with our AI platform"
       testimonials={testimonials}
     />
+    <Faq02 />
+    
+    
           <Footerdemo />
 
     </>

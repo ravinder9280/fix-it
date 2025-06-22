@@ -30,8 +30,8 @@ export default function RootLayout({
       }}
     >
     
-    <html lang="en">
-      <ThemeProvider  defaultTheme={"dark"} >
+    <html lang="en" className="dark">
+      <ThemeProvider  defaultTheme={"system"} >
       <body
         className={`${inter.className}  antialiased`}
         >

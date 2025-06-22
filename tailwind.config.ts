@@ -1,6 +1,9 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+	dropShadow: {
+		glow: "0 0 8px rgba(0, 212, 255, 0.5)",
+	},
     darkMode: ["class"],
     content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -58,13 +61,25 @@ const config: Config = {
   		}
   	},
 	  animation: {
-        marquee: 'marquee var(--duration) linear infinite',
+		  marquee: 'marquee var(--duration) linear infinite',
+		  glow: 'glow 1.5s ease-in-out infinite',
+		  shimmer: 'shimmer 1.5s infinite linear',
+
       },
 	  keyframes: {
         marquee: {
           from: { transform: 'translateX(0)' },
           to: { transform: 'translateX(calc(-100% - var(--gap)))' }
-        }
+		  },
+		  glow: {
+			  '0%, 100%': { boxShadow: '0 0 0px rgba(0, 255, 255, 0.4)' },
+			  '50%': { boxShadow: '0 0 12px 4px rgba(0, 255, 255, 0.6)' },
+		  },
+		  shimmer: {
+			  '0%': { transform: 'translateX(-100%)' },
+			  '100%': { transform: 'translateX(100%)' },
+		  },
+		  
       }
   },
   plugins: [require("tailwindcss-animate")],
