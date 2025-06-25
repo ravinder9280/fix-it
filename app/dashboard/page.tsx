@@ -42,7 +42,10 @@ export default function GrammarCorrector() {
 
     const onSubmit = async (data: GrammarFormData) => {
         try {
+            setCorrectedText(null);
+            
             setIsLoading(true);
+            
             const result = await generateCorrectedText({
                 input: data.text,
             });
