@@ -105,7 +105,7 @@ export default function GrammarCorrector() {
                         correctedText && (
                             <div className="space-y-4">
                                 <Label className="text-sm font-medium">Corrected Version</Label>
-                                <div className="p-3 bg-muted rounded-lg">
+                                <div className=" bg-muted rounded-lg p-3 justify-center min-h-[200px] max-h-[300px] overflow-y-auto" >
                                     <p className="text-lg  font-medium  ">
                                         {correctedText.base}</p>
                                 </div>
@@ -157,7 +157,7 @@ export default function GrammarCorrector() {
                             {Object.entries(correctedText.tones).map(([tone, text]) => (
                                 <TabsContent key={tone} value={tone}>
 
-                                    <div className=" bg-muted rounded-lg p-3 justify-center min-h-[200px]" >
+                                    <div className=" bg-muted rounded-lg p-3 justify-center min-h-[200px] max-h-[500px] overflow-y-auto" >
 
                                     <p className="text-lg  font-medium  ">
                                         {text}</p>
