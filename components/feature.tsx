@@ -1,29 +1,28 @@
 
 import {  Cpu, ShieldCheck, Layers, Zap} from "lucide-react";
-
 const features = [
     {
         icon: Cpu,
         title: "Performance",
-        description: "Ultra-fast data processing in every situation.",
+        description: "Fast, accurate grammar correction and tone rewriting.",
     },
     {
         icon: ShieldCheck,
         title: "Security",
-        description: "Advanced protection for complete peace of mind.",
+        description: "All processing is done securely on the server.",
     },
     {
         icon: Layers,
         title: "Modularity",
-        description: "Easy integration with existing architecture.",
+        description: "Easy to Use.",
     },
     {
         icon: Zap,
         title: "Responsiveness",
-        description: "Instant response to every command.",
+        description: "Instant results with a smooth, interactive interface.",
     },
-
 ];
+
 
 export default function Feature() {
     return (
