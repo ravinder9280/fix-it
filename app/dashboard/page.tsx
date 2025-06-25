@@ -65,7 +65,7 @@ export default function GrammarCorrector() {
     };
 
     return (
-        <div className="grid w-full grid-cols-1 md:grid-cols-2 p-8 items-center justify-center  flex-col md:flex-row gap-4">
+        <div className="grid w-full grid-cols-1 md:grid-cols-2 p-3 md:p-8 items-center justify-center  flex-col md:flex-row gap-4">
             <Card className="w-full col-span-1 h-full min-h-[500px]">
                 <CardHeader>
                     <CardTitle>Grammar Corrector</CardTitle>
