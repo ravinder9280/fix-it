@@ -19,12 +19,11 @@ import { Label } from "@/components/ui/label";
 import { generateCorrectedText } from "@/actions/generateText";
 import { z } from "zod";
 import CardSkeleton from "@/components/card-skeleton";
+import { GrammarFormData } from "@/types";
 
 const grammarSchema = z.object({
     text: z.string().min(1, "Please enter some text to correct"),
 });
-
-type GrammarFormData = z.infer<typeof grammarSchema>;
 
 export default function GrammarCorrector() {
     const [correctedText, setCorrectedText] = useState<{

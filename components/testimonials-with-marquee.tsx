@@ -1,16 +1,6 @@
 import { cn } from "@/lib/utils"
 import { TestimonialCard, TestimonialAuthor } from "@/components/ui/testimonial-card"
-
-interface TestimonialsSectionProps {
-  title: string
-  description: string
-  testimonials: Array<{
-    author: TestimonialAuthor
-    text: string
-    href?: string
-  }>
-  className?: string
-}
+import { TestimonialsSectionProps } from "@/types"
 
 export function TestimonialsSection({ 
   title,

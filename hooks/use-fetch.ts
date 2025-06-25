@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { toast } from "sonner";
 
-const useFetch = (cb) => {
-    const [data, setData] = useState(undefined);
-    const [loading, setLoading] = useState(null);
-    const [error, setError] = useState(null);
+const useFetch = <T = unknown>(cb: (...args: unknown[]) => Promise<T>) => {
+    const [data, setData] = useState<T | undefined>(undefined);
+    const [loading, setLoading] = useState<boolean>(false);
+    const [error, setError] = useState<Error | null>(null);
 
-    const fn = async (...args) => {
+    const fn = async (...args: unknown[]) => {
         setLoading(true);
         setError(null);
 
@@ -15,8 +15,9 @@ const useFetch = (cb) => {
             setData(response);
             setError(null);
         } catch (error) {
-            setError(error);
-            toast.error(error.message);
+            const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred';
+            setError(error instanceof Error ? error : new Error(errorMessage));
+            toast.error(errorMessage);
         } finally {
             setLoading(false);
         }

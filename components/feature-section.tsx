@@ -4,21 +4,7 @@ import React, { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import Image from "next/image"
 import { cn } from "@/lib/utils"
-
-interface Feature {
-  step: string
-  title?: string
-  content: string
-  image: string
-}
-
-interface FeatureStepsProps {
-  features: Feature[]
-  className?: string
-  title?: string
-  autoPlayInterval?: number
-  imageHeight?: string
-}
+import { Feature, FeatureStepsProps } from "@/types"
 
 export function FeatureSteps({
   features,

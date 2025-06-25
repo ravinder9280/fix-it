@@ -3,17 +3,13 @@
 import { createGoogleGenerativeAI } from '@ai-sdk/google';
 import { generateObject } from 'ai';
 import { z } from 'zod';
+import { GenerateOptions } from '@/types';
 
 const google = createGoogleGenerativeAI({
     apiKey: process.env.GOOGLE_GEMINI_API_KEY!,
 });
 
 const model = google('gemini-1.5-flash');
-
-type GenerateOptions = {
-    input: string;
-    persona?: string;
-};
 
 export async function generateCorrectedText({
     input,

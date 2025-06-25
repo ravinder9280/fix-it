@@ -5,8 +5,8 @@ import { Footerdemo } from "@/components/ui/footer-section";
 
 import { FeatureSteps } from "@/components/feature-section"
 import Feature from "@/components/feature";
-import { features } from "@/constant/featuresSteps.json";
-import { testimonials } from "@/constant/testimonials.json";
+import { features } from "@/constant/featuresSteps";
+import { testimonials } from "@/constant/testimonials";
 import Faq02 from "@/components/faq";
 import { motion } from "motion/react";
 

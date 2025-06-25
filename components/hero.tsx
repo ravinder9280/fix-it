@@ -5,23 +5,7 @@ import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-
-// Define the HeroProps interface
-interface HeroProps {
-  className?: string
-  gradient?: boolean
-  blur?: boolean
-  title: string
-  subtitle?: string
-  actions?: Array<{
-    label: string
-    href: string
-    variant?: "link" | "default" | "destructive" | "outline" | "secondary" | "ghost" | null
-  }>
-  titleClassName?: string
-  subtitleClassName?: string
-  actionsClassName?: string
-}
+import { HeroProps } from "@/types"
 
 const Hero = React.forwardRef<HTMLElement, HeroProps>(
   (
