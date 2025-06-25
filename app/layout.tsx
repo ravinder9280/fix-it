@@ -1,4 +1,4 @@
-import {Outfit} from "next/font/google";
+import { Outfit } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
 import { type Metadata } from 'next'
@@ -9,8 +9,9 @@ import {
 } from '@clerk/nextjs'
 
 import { ThemeProvider } from "@/components/theme-provider";
-const inter = Outfit({ subsets: ['latin'],
-  
+const inter = Outfit({
+  subsets: ['latin'],
+
 });
 
 export const metadata: Metadata = {
@@ -24,25 +25,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-<ClerkProvider
+    <ClerkProvider
       appearance={{
         baseTheme: dark,
       }}
     >
-    
-    <html lang="en" className="dark">
-      <ThemeProvider  defaultTheme={"system"} >
-      <body
-        className={`${inter.className}  antialiased`}
-        >
-        <NavBar/>
-        <main className="mt-[4rem]">
 
-        {children}
-        </main>
-      </body>
+      <html lang="en" className="dark">
+        <ThemeProvider defaultTheme={"system"} >
+          <body
+            className={`${inter.className}  antialiased`}
+          >
+            <NavBar />
+            <main className="mt-[4rem]">
+
+              {children}
+            </main>
+          </body>
         </ThemeProvider>
-    </html>
-          </ClerkProvider>
+      </html>
+    </ClerkProvider>
   );
 }

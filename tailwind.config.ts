@@ -64,7 +64,7 @@ const config: Config = {
 		  marquee: 'marquee var(--duration) linear infinite',
 		  glow: 'glow 1.5s ease-in-out infinite',
 		  shimmer: 'shimmer 1.5s infinite linear',
-
+		  spin: 'spin 1s linear infinite',
       },
 	  keyframes: {
         marquee: {
@@ -78,6 +78,9 @@ const config: Config = {
 		  shimmer: {
 			  '0%': { transform: 'translateX(-100%)' },
 			  '100%': { transform: 'translateX(100%)' },
+		  },
+		  spin: {
+			  to: { transform: "rotate(360deg)" }, // required for custom 'spin' to work
 		  },
 		  
       }

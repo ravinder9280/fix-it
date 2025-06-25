@@ -55,10 +55,10 @@ export const generateSentence=async (data:string)=>{
         const dietJson = JSON.parse(cleanedText);
         return dietJson;
   }
-  // console.log(await generateSentence(
-  //     `
-  //     Using this AI platform has transformed how we handle data analysis. The speed and accuracy are unprecedented.
-  //     The API integration is flawless. We've reduced our development time by 60% since implementing this solution.
-  //     `
+  console.log(await generateSentence(
+      `
+      Using this AI platform has transformed how we handle data analysis. The speed and accuracy are unprecedented.
+      The API integration is flawless. We've reduced our development time by 60% since implementing this solution.
+      `
       
-  //   ))
+    ))
