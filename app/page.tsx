@@ -1,7 +1,7 @@
 
 import { TestimonialsSection } from "@/components/testimonials-with-marquee"
 import { Hero } from "@/components/hero"
-import { Footerdemo } from "@/components/ui/footer-section";
+import { Footer} from "@/components/footer-section";
 
 import { FeatureSteps } from "@/components/feature-section"
 import Feature from "@/components/feature";
@@ -47,7 +47,7 @@ export default function Page() {
     <Faq02 />
     
     
-    <Footerdemo />
+    <Footer />
 
     </>
     
