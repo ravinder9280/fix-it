@@ -1,4 +1,4 @@
-'use client'
+
 import { TestimonialsSection } from "@/components/testimonials-with-marquee"
 import { Hero } from "@/components/hero"
 import { Footerdemo } from "@/components/ui/footer-section";
@@ -8,7 +8,6 @@ import Feature from "@/components/feature";
 import { features } from "@/constant/featuresSteps";
 import { testimonials } from "@/constant/testimonials";
 import Faq02 from "@/components/faq";
-import { motion } from "motion/react";
 
 
 export default function Page() {
@@ -49,12 +48,6 @@ export default function Page() {
     
     
     <Footerdemo />
-    <div className=" max-w-7xl">
-
-    <motion.div initial={{ borderRadius:"0" }} animate={{ borderRadius:"50%" ,rotate:360}} transition={{ duration: 0.4}} className="bg-red-200 mx-auto size-[200px]">
-
-    </motion.div>
-    </div>
 
     </>
     
