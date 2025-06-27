@@ -34,7 +34,7 @@ export default function GrammarCorrectorClient({ className }: GrammarCorrectorCl
                     {correctedText && (
                         <div className="space-y-4">
                             <Label className="text-sm font-medium">Corrected Version</Label>
-                            <div className="bg-muted relative rounded-lg p-3  justify-center min-h-[200px] max-h-[300px] overflow-y-auto">
+                            <div className="bg-muted relative rounded-lg p-3 pr-8 justify-center min-h-[200px] max-h-[300px] overflow-y-auto">
                                 <CopyButton  className="absolute top-1 right-1 bg-white/10 " text={correctedText.base} />
                                 <p className="text-lg mr-4 font-medium">
                                     {correctedText.base}
