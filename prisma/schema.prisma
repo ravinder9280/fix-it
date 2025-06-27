@@ -11,16 +11,42 @@ generator client {
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
 
 model User {
   id    Int     @id @default(autoincrement())
+  clerkId String  @unique
   email String  @unique
   firstName  String?
   lastName   String?
   imageUrl String?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  
+  grammarCorrector GrammarCorrector[]
+
 }
+
+model GrammarCorrector {
+  id    Int     @id @default(autoincrement())
+  userId Int
+  user User @relation(fields: [userId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  text String
+  correctedText String
+  tones Tone[]
+
+}
+
+model Tone {
+  id    Int     @id @default(autoincrement())
+  name String
+  text String
+  grammarCorrector GrammarCorrector @relation(fields: [grammarCorrectorId], references: [id])
+  grammarCorrectorId Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+

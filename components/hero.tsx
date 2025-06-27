@@ -105,6 +105,14 @@ const Hero = React.forwardRef<HTMLElement, HeroProps>(
           className="relative z-50 container flex justify-center flex-1 flex-col px-5 md:px-10 gap-4 -translate-y-20"
         >
           <div className="flex flex-col items-center text-center space-y-4">
+
+            <div className="mb-6 text-xs px-3 py-1 flex items-center justify-center gap-1 bg-primary/10 rounded-full shadow-md">
+              <span>🔥</span>
+
+              <p className="text-sm text-primary">
+                Practice. Improve. Repeat.
+              </p>
+            </div>
             <h1
               className={cn(
                 "text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight",
@@ -131,7 +139,7 @@ const Hero = React.forwardRef<HTMLElement, HeroProps>(
                     variant={action.variant || "default"}
                     asChild
                   >
-                    <Link href={'/dashboard'}>{action.label}</Link>
+                    <Link href={'/grammer'}>{action.label}</Link>
                   </Button>
                 ))}
               </div>

@@ -83,6 +83,26 @@ export interface GenerateOptions {
     persona?: string;
 }
 
+// Grammar corrector component types
+export interface GrammarCorrectorFormProps {
+    onResult: (result: CorrectedTextResult | null) => void;
+    onLoadingChange: (loading: boolean) => void;
+    isLoading: boolean;
+}
+
+export interface CorrectedTextDisplayProps {
+    correctedText: CorrectedTextResult;
+}
+
+export interface TonesDisplayProps {
+    correctedText: CorrectedTextResult | null;
+    isLoading: boolean;
+}
+
+export interface GrammarCorrectorClientProps {
+    className?: string;
+}
+
 // JSON data types
 export interface FeaturesData {
     features: Feature[];

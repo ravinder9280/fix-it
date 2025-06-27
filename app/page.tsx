@@ -40,8 +40,8 @@ export default function Page() {
       />
     <Feature />
           <TestimonialsSection
-      title="Trusted by developers worldwide"
-      description="Join thousands of developers who are already building the future with our AI platform"
+      title="Trusted by Professionals worldwide"
+      description="Join thousands of professionals who are already building the future with our AI platform"
       testimonials={testimonials}
     />
     <Faq02 />

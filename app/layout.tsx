@@ -37,7 +37,7 @@ export default function RootLayout({
             className={`${inter.className}  antialiased`}
           >
             <NavBar />
-            <main className="mt-[4rem]">
+            <main className="mt-[4rem] ">
 
               {children}
             </main>

@@ -52,6 +52,16 @@ const config: Config = {
   				'3': 'hsl(var(--chart-3))',
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
+  			},
+  			sidebar: {
+  				DEFAULT: 'hsl(var(--sidebar-background))',
+  				foreground: 'hsl(var(--sidebar-foreground))',
+  				primary: 'hsl(var(--sidebar-primary))',
+  				'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
+  				accent: 'hsl(var(--sidebar-accent))',
+  				'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
+  				border: 'hsl(var(--sidebar-border))',
+  				ring: 'hsl(var(--sidebar-ring))'
   			}
   		},
   		borderRadius: {
@@ -60,30 +70,43 @@ const config: Config = {
   			sm: 'calc(var(--radius) - 4px)'
   		}
   	},
-	  animation: {
-		  marquee: 'marquee var(--duration) linear infinite',
-		  glow: 'glow 1.5s ease-in-out infinite',
-		  shimmer: 'shimmer 1.5s infinite linear',
-		  spin: 'spin 1s linear infinite',
-      },
-	  keyframes: {
-        marquee: {
-          from: { transform: 'translateX(0)' },
-          to: { transform: 'translateX(calc(-100% - var(--gap)))' }
-		  },
-		  glow: {
-			  '0%, 100%': { boxShadow: '0 0 0px rgba(0, 255, 255, 0.4)' },
-			  '50%': { boxShadow: '0 0 12px 4px rgba(0, 255, 255, 0.6)' },
-		  },
-		  shimmer: {
-			  '0%': { transform: 'translateX(-100%)' },
-			  '100%': { transform: 'translateX(100%)' },
-		  },
-		  spin: {
-			  to: { transform: "rotate(360deg)" }, // required for custom 'spin' to work
-		  },
-		  
-      }
+  	animation: {
+  		marquee: 'marquee var(--duration) linear infinite',
+  		glow: 'glow 1.5s ease-in-out infinite',
+  		shimmer: 'shimmer 1.5s infinite linear',
+  		spin: 'spin 1s linear infinite'
+  	},
+  	keyframes: {
+  		marquee: {
+  			from: {
+  				transform: 'translateX(0)'
+  			},
+  			to: {
+  				transform: 'translateX(calc(-100% - var(--gap)))'
+  			}
+  		},
+  		glow: {
+  			'0%, 100%': {
+  				boxShadow: '0 0 0px rgba(0, 255, 255, 0.4)'
+  			},
+  			'50%': {
+  				boxShadow: '0 0 12px 4px rgba(0, 255, 255, 0.6)'
+  			}
+  		},
+  		shimmer: {
+  			'0%': {
+  				transform: 'translateX(-100%)'
+  			},
+  			'100%': {
+  				transform: 'translateX(100%)'
+  			}
+  		},
+  		spin: {
+  			to: {
+  				transform: 'rotate(360deg)'
+  			}
+  		}
+  	}
   },
   plugins: [require("tailwindcss-animate")],
 };
