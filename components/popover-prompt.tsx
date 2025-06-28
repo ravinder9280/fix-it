@@ -46,6 +46,7 @@ export default function PopoverPrompt({ register }: { register: UseFormRegister<
                     <Textarea
                         placeholder="Enter a prompt"
                         id="prompt"
+                        autoFocus
                         
                         {...register("prompt")}  />
                     {/* <div className="flex  justify-between items-center">
