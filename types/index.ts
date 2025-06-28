@@ -70,6 +70,7 @@ export interface FAQItemProps {
 // Grammar correction types
 export interface GrammarFormData {
     text: string;
+    prompt?: string;
 }
 
 export interface CorrectedTextResult {
@@ -81,6 +82,7 @@ export interface CorrectedTextResult {
 export interface GenerateOptions {
     input: string;
     persona?: string;
+    prompt?: string;
 }
 
 // Grammar corrector component types

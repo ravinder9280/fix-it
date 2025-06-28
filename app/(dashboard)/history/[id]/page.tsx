@@ -2,8 +2,6 @@ import React from 'react'
 import { prisma } from '@/lib/prisma'
 import { currentUser } from '@clerk/nextjs/server'
 import { CopyButton } from '@/components/copy-button'
-import TonesDisplay from '@/components/grammar-corrector/tones-display'
-import { ChartNoAxesColumnIcon } from 'lucide-react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 const HistoryPage = async ({params}:{params: {id: string}}) => {
@@ -31,14 +29,18 @@ userId: userData?.id
       }
       
   })
-  const tones = grammarCorrector?.tones.map((tone) => tone.text)
   if (!grammarCorrector) {
     return <div>Grammar corrector not found</div>
   }
     console.log(grammarCorrector)
   return (
-      <div className='flex flex-col gap-4'>
-          <h2 className='text-2xl  truncate w-full md:w-[80%] font-bold'>{grammarCorrector?.text}</h2>
+    <div className='flex flex-col gap-4'>
+      <div className='flex items-center gap-2'>
+
+        <h2 className='text-2xl  truncate w-full md:w-[80%] font-bold'>
+          
+          {grammarCorrector?.text}</h2>
+      </div>
           <div className='grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8'>
             <div className='flex flex-col gap-2'>
                   <h3 className='text-lg text-white/80 font-bold'>Original Text</h3>

@@ -10,9 +10,11 @@ import { generateCorrectedText } from "@/actions/generateText";
 import { z } from "zod";
 import { GrammarFormData, GrammarCorrectorFormProps } from "@/types";
 import { Loader } from "lucide-react";
+import PopoverPrompt from "../popover-prompt";
 
 const grammarSchema = z.object({
     text: z.string().min(1, "Please enter some text to correct"),
+    prompt: z.string().optional(),
 });
 
 export default function GrammarCorrectorForm({ onResult, onLoadingChange, isLoading }: GrammarCorrectorFormProps) {
@@ -25,12 +27,14 @@ export default function GrammarCorrectorForm({ onResult, onLoadingChange, isLoad
     });
 
     const onSubmit = async (data: GrammarFormData) => {
+        console.log(data);
         try {
             onResult(null);
             onLoadingChange(true);
 
             const result = await generateCorrectedText({
                 input: data.text,
+                prompt: data.prompt,
             });
 
             if (result.success) {
@@ -50,8 +54,14 @@ export default function GrammarCorrectorForm({ onResult, onLoadingChange, isLoad
     return (
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
             <div className="space-y-2">
-                <Label htmlFor="text">Text to Correct</Label>
+                <div className="flex items-center justify-between gap-2">
+
+                    <Label htmlFor="text">Text to Correct</Label>
+                    <PopoverPrompt register={register} />
+                </div>
                 <Textarea
+                    
+                    
                     id="text"
                     placeholder="Enter your text here..."
                     className="min-h-[120px]"

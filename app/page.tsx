@@ -8,6 +8,7 @@ import Feature from "@/components/feature";
 import { features } from "@/constant/featuresSteps";
 import { testimonials } from "@/constant/testimonials";
 import Faq02 from "@/components/faq";
+import CtaSection from "@/components/cta-section";
 
 
 export default function Page() {
@@ -45,6 +46,7 @@ export default function Page() {
       testimonials={testimonials}
     />
     <Faq02 />
+    <CtaSection/>
     
     
     <Footer />

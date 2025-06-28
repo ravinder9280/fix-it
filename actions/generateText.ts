@@ -15,10 +15,12 @@ const model = google('gemini-1.5-flash');
 
 export async function generateCorrectedText({
     input,
+    prompt: userPrompt,
 }: GenerateOptions): Promise<{
     success: boolean;
     base: string;
     tones: Record<string, string>;
+    prompt?: string;
 }> {
     try {
         // Get the current user
@@ -36,13 +38,16 @@ export async function generateCorrectedText({
             throw new Error('User not found in database');
         }
 
+        console.log(userPrompt);
+
         const tonesList = ['formal', 'friendly', 'casual', 'assertive'];
 
         const prompt = `
 You are a grammar expert and style rewriter.
 
-1. First, correct the grammar of the following text without changing its meaning.
+1. First, correct the grammar of the following text by following the user instructions .
 2. Then rewrite the corrected text in the following tones: ${tonesList.join(', ')}.
+3. follow this user instructions: ${userPrompt}
 
 Respond in **valid JSON** with this shape:
 {

@@ -9,6 +9,7 @@ import {
 } from '@clerk/nextjs'
 
 import { ThemeProvider } from "@/components/theme-provider";
+import { Toaster } from "sonner";
 const inter = Outfit({
   subsets: ['latin'],
 
@@ -43,6 +44,7 @@ export default function RootLayout({
             </main>
           </body>
         </ThemeProvider>
+        <Toaster theme="dark"  richColors closeButton />
       </html>
     </ClerkProvider>
   );
