@@ -28,8 +28,11 @@ export default function TonesDisplay({ correctedText, isLoading }: TonesDisplayP
 
             {Object.entries(correctedText.tones).map(([tone, text]) => (
                 <TabsContent key={tone} value={tone}>
-                    <div className="bg-muted rounded-lg p-3 relative justify-center min-h-[200px] max-h-[500px] overflow-y-auto">
-                        <CopyButton  className="absolute top-1 right-1 bg-white/10 " text={text} />
+                    <div className="bg-muted rounded-lg p-3   justify-center min-h-[200px] max-h-[500px] overflow-y-auto">
+                        <div className="relative right-2 top-2 w-full">
+
+                        <CopyButton  className="sticky right-2 top-2 bg-white/10 " text={text} />
+                        </div>
                         <p className="text-lg  mr-4 font-medium">
                             {text}
                         </p>

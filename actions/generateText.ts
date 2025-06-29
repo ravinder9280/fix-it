@@ -1,17 +1,11 @@
 'use server';
 
-import { createGoogleGenerativeAI } from '@ai-sdk/google';
 import { generateObject } from 'ai';
 import { z } from 'zod';
 import { GenerateOptions } from '@/types';
 import { prisma } from '@/lib/prisma';
 import { currentUser } from '@clerk/nextjs/server';
-
-const google = createGoogleGenerativeAI({
-    apiKey: process.env.GOOGLE_GEMINI_API_KEY!,
-});
-
-const model = google('gemini-1.5-flash');
+import { model } from '@/lib/gemini';
 
 export async function generateCorrectedText({
     input,

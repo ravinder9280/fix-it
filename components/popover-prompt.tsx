@@ -9,6 +9,7 @@ import { Textarea } from "./ui/textarea"
 import { Plus, X } from "lucide-react"
 import { UseFormRegister } from "react-hook-form"
 import { GrammarFormData } from "@/types"
+import { PopoverClose } from "@radix-ui/react-popover"
 
 export default function PopoverPrompt({ register }: { register: UseFormRegister<GrammarFormData> }) {
     return (
@@ -27,16 +28,19 @@ export default function PopoverPrompt({ register }: { register: UseFormRegister<
                         <div className="flex justify-between items-center">
 
                             <h4 className="leading-none font-medium">ADD PROMPT</h4>
+                            <PopoverClose asChild>
+
                             <Button
 
-                                type="button"
-                                variant="ghost"
-                                size="icon"
+type="button"
+variant="ghost"
+size="icon"
 
-                                aria-label="Close popover"
-                            >
+aria-label="Close popover"
+>
                                 <X className="h-4 w-4" />
                             </Button>
+                                </PopoverClose>
                             
                         </div>
                         <p className="text-muted-foreground text-sm">
