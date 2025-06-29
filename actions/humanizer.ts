@@ -13,5 +13,3 @@ export async function humanizeText(text: string,mode:"basic" | "advanced"|"pro")
     return response.text
 }
 
-
-console.log(await humanizeText("Humanize AI Text with QuillBot's AI Humanizer!", "basic"))
