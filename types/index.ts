@@ -120,4 +120,25 @@ export type ButtonSize = "default" | "sm" | "lg" | "icon";
 
 // Common utility types
 export type Optional<T, K extends keyof T> = Omit<T, K> & Partial<Pick<T, K>>;
-export type RequiredFields<T, K extends keyof T> = T & Required<Pick<T, K>>; 
+export type RequiredFields<T, K extends keyof T> = T & Required<Pick<T, K>>;
+
+// Humanizer types
+export interface HumanizerFormData {
+    text: string;
+    mode: "basic" | "advanced" | "pro";
+}
+
+export interface HumanizerResult {
+    success: boolean;
+    humanizedText: string;
+}
+
+export interface HumanizerFormProps {
+    onResult: (result: HumanizerResult | null) => void;
+    onLoadingChange: (loading: boolean) => void;
+    isLoading: boolean;
+}
+
+export interface HumanizerClientProps {
+    className?: string;
+} 
