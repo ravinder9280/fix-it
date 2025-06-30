@@ -9,23 +9,27 @@ const MobileNav = ({navigationItems, pathname}:{navigationItems: {title: string,
   return (
       <Sheet>
           <SheetTrigger asChild>
+              
               <Button
                   variant="ghost"
                   size="icon"
-                  className="shrink-0 md:hidden"
+                  className="shrink-0 rounded-full md:hidden"
               >
                   <Menu className="size-5" />
                   <span className="sr-only">Toggle navigation menu</span>
               </Button>
           </SheetTrigger>
-          <SheetContent side="right">
+          <SheetContent side="left">
               <div className="flex flex-col gap-6 text-lg font-medium">
+                  <SheetClose asChild>
+                      
                   <Link
                       href={'/'}
                       className="  text-2xl font-bold"
-                  >
+                      >
                       <span className='p-2 rounded-md hover:bg-accent'>FIXIT</span>
                   </Link>
+                      </SheetClose>
                   <div className='flex flex-col gap-2'>
                       
                   {navigationItems.map((item) => (

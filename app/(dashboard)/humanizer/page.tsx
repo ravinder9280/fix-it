@@ -73,7 +73,7 @@ const Humanizer = () => {
     <div className='flex flex-col w-full max-w-7xl mx-auto gap-8'>
       <div className='flex text-center flex-col gap-2'>
 
-        <h2 className=' text-3xl font-bold'>Humanize AI Text with FIX-IT AI Humanizer</h2>
+        <h2 className=' text-2xl md:text-3xl font-bold'>Humanize AI Text with FIX-IT AI Humanizer</h2>
         <p className='text-muted-foreground text-sm  md:text-base '>
           Fix-IT AI Humanizer is a tool that helps you humanize AI text.
           It uses the latest AI models to humanize text.

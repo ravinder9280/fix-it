@@ -30,7 +30,7 @@ const NavBar = () => {
     {
       title: "Prompt Generator",
       icon: Bot,
-      url: "/#testimonials",
+      url: "/prompt-generator",
     },
     {
       title: "History",
@@ -55,10 +55,15 @@ const NavBar = () => {
 
   return (
     <header className="fixed top-0 w-full border-b  bg-background/80 backdrop-blur-md z-50 supports-[backdrop-filter]:bg-background/60">
-              <nav className="container  mx-auto px-4 h-16 flex items-center justify-between">
+      <nav className="container  mx-auto px-4 h-16 flex items-center justify-between">
+        <div className='flex items-center gap-2'>
+          <MobileNav navigationItems={navigationItems} pathname={pathname} />
+
+
                 <Link href={'/'}
-                className='text-2xl font-bold rounded-md p-2 hover:bg-accent bg:text-primary-foreground'
-        >FIX-IT</Link>
+                className='text-2xl font-bold rounded-md px-2 md:p-2 hover:bg-accent bg:text-primary-foreground'
+                >FIX-IT</Link>
+                </div>
           <div className='hidden md:flex items-center   lg:gap-6'>
           {navigationItems.map((item) => (
               <Button className={cn(pathname === item.url && 'text-primary bg-primary/10')} variant={'ghost'} asChild key={item.title}>
@@ -84,7 +89,6 @@ const NavBar = () => {
               </Button>
             
 }
-            <MobileNav navigationItems={navigationItems} pathname={pathname}/>
                   </div>
 
                 </nav>
