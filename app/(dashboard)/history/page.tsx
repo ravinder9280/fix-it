@@ -30,7 +30,7 @@ const HistoryPage = async () => {
 
 
   return (
-    <div className='flex flex-col items-center justify-center'>
+    <div className='flex flex-col w-full max-w-7xl mx-auto items-center justify-center'>
 
     <div className='flex flex-col gap-4'>
       <div className='flex flex-col gap-4'>
