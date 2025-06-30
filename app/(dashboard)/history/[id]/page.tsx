@@ -51,7 +51,7 @@ userId: userData?.id
               </div>
               <div className='flex flex-col gap-2'>
                   <h3 className='text-lg text-primary font-bold'>Corrected Text</h3>
-                  <div className="bg-muted relative rounded-lg p-3 pr-8  justify-center min-h-[200px] max-h-[300px] overflow-y-auto">
+                  <div className="bg-muted relative rounded-lg p-3 pr-8  justify-center min-h-[200px] max-h-[300px] text-white/80 text-wrap overflow-y-auto">
                       <CopyButton className="absolute top-1 right-1 bg-white/10 " text={grammarCorrector?.correctedText} />
 
                 <p className='text-sm text-white/80'>{grammarCorrector?.correctedText}</p>
