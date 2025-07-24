@@ -52,6 +52,13 @@ const NavBar = () => {
       ],
     },
   ]
+  const userButtonAppearance = {
+    elements: {
+      userButtonAvatarBox: "border border-primary/50", // Custom width and height
+      userButtonPopoverActionButton: "text-primary", // Custom text color for action buttons
+    },
+  };
+
 
   return (
     <header className="fixed top-0 w-full border-b  bg-background/80 backdrop-blur-md z-50 supports-[backdrop-filter]:bg-background/60">
@@ -80,7 +87,7 @@ const NavBar = () => {
         <div className='flex items-center gap-2'>
 
             { 
-                  user?<UserButton/>:
+            user ? <UserButton appearance={userButtonAppearance}/>:
                 <Button variant={'outline'} asChild >
                   <Link  href={'/sign-in'}>
                   

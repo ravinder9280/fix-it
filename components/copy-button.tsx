@@ -44,6 +44,7 @@ function CopyButton({
                         onClick={handleCopy}
                         aria-label={copied ? "Copied" : "Copy to clipboard"}
                         disabled={copied}
+                        type="button"
                     >
                         <div
                             className={cn(

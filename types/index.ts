@@ -141,4 +141,13 @@ export interface HumanizerFormProps {
 
 export interface HumanizerClientProps {
     className?: string;
+}
+
+export interface PromptGeneratorFormData {
+    input: string;
+}
+
+export interface PromptGeneratorResult {
+    success: boolean;
+    generatedPrompt: string;
 } 
